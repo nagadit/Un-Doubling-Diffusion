@@ -1,0 +1,121 @@
+
+### Stable diffusion
+
+# https://huggingface.co/stabilityai/stable-diffusion-3-medium-diffusers (float16)
+# commit: ea42f8cef0f178587cf766dc8129abd379c90671
+sd3medium:
+  _target_: diffusers.StableDiffusion3Pipeline.from_pretrained
+  pretrained_model_name_or_path: stabilityai/stable-diffusion-3-medium-diffusers
+  torch_dtype:
+    _target_: utils.get_torch_dtype
+    _args_: ["float16"]
+
+# https://huggingface.co/stabilityai/stable-diffusion-3.5-medium
+# commit: 4ab6c3331a7591f128a21e617f0d9d3fc7e06e42
+sd3d5medium:
+  _target_: diffusers.StableDiffusion3Pipeline.from_pretrained
+  pretrained_model_name_or_path: stabilityai/stable-diffusion-3.5-medium
+  torch_dtype:
+    _target_: utils.get_torch_dtype
+    _args_: ["bfloat16"]
+
+# https://huggingface.co/stabilityai/stable-diffusion-3.5-large
+# commit: ceddf0a7fdf2064ea28e2213e3b84e4afa170a0f
+sd3d5large:
+  _target_: diffusers.StableDiffusion3Pipeline.from_pretrained
+  pretrained_model_name_or_path: stabilityai/stable-diffusion-3.5-large
+  torch_dtype:
+    _target_: utils.get_torch_dtype
+    _args_: ["bfloat16"]
+
+# https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0
+# commit: 462165984030d82259a11f4367a4eed129e94a7b
+sdxl:
+  _target_: diffusers.DiffusionPipeline.from_pretrained
+  pretrained_model_name_or_path: stabilityai/stable-diffusion-xl-base-1.0
+  use_safetensors: true
+  torch_dtype:
+    _target_: utils.get_torch_dtype
+    _args_: ["float16"]
+  variant: fp16
+
+
+### FLUX
+
+# https://huggingface.co/black-forest-labs/FLUX.1-schnell
+# commit: 741f7c3ce8b383c54771c7003378a50191e9efe9
+flux1s:
+  _target_: diffusers.FluxPipeline.from_pretrained
+  pretrained_model_name_or_path: black-forest-labs/FLUX.1-schnell
+  torch_dtype:
+    _target_: utils.get_torch_dtype
+    _args_: ["bfloat16"]
+
+# https://huggingface.co/black-forest-labs/FLUX.1-dev
+# commit: 0ef5fff789c832c5c7f4e127f94c8b54bbcced44
+flux1d:
+  _target_: diffusers.FluxPipeline.from_pretrained
+  pretrained_model_name_or_path: black-forest-labs/FLUX.1-dev
+  torch_dtype:
+    _target_: utils.get_torch_dtype
+    _args_: ["bfloat16"]
+
+
+### Kandinsky 3
+
+# https://huggingface.co/kandinsky-community/kandinsky-3
+# commit: bf79e6c219da8a94abb50235fdc4567eb8fb4632
+kandy3:
+  _target_: diffusers.AutoPipelineForText2Image.from_pretrained
+  pretrained_model_or_path: kandinsky-community/kandinsky-3
+  torch_dtype:
+    _target_: utils.get_torch_dtype
+    _args_: ["float16"]
+  variant: fp16
+
+
+## Pixart
+
+# https://huggingface.co/PixArt-alpha/PixArt-XL-2-1024-MS
+# commit: b89adadeccd9ead2adcb9fa2825d3fabec48d404
+pixart_alpha:
+  _target_: diffusers.PixArtAlphaPipeline.from_pretrained
+  pretrained_model_name_or_path: PixArt-alpha/PixArt-XL-2-1024-MS
+  torch_dtype:
+    _target_: utils.get_torch_dtype
+    _args_: ["float16"]
+
+# https://huggingface.co/PixArt-alpha/PixArt-Sigma-XL-2-1024-MS
+# commit: e102b3591cc82e97071b8b4cb90d834d0c487207
+pixart_sigma:
+  _target_: diffusers.PixArtSigmaPipeline.from_pretrained
+  pretrained_model_name_or_path: PixArt-alpha/PixArt-Sigma-XL-2-1024-MS
+  use_safetensors: true
+  torch_dtype:
+    _target_: utils.get_torch_dtype
+    _args_: ["float16"]
+
+
+### Playground 2.5
+
+# https://huggingface.co/playgroundai/playground-v2.5-1024px-aesthetic
+# commit: 1e032f13f2fe6db2dc49947dbdbd196e753de573
+plgrnd:
+  _target_: diffusers.DiffusionPipeline.from_pretrained
+  pretrained_model_name_or_path: playgroundai/playground-v2.5-1024px-aesthetic
+  torch_dtype:
+    _target_: utils.get_torch_dtype
+    _args_: ["float16"]
+  variant: fp16
+
+
+### CogView 4
+
+# https://huggingface.co/THUDM/CogView4-6B
+# commit: 63a52b7f6dace7033380cd6da14d0915eab3e6b5
+cogview4:
+  _target_: diffusers.CogView4Pipeline.from_pretrained
+  pretrained_model_name_or_path: THUDM/CogView4-6B
+  torch_dtype:
+    _target_: utils.get_torch_dtype
+    _args_: ["bfloat16"]

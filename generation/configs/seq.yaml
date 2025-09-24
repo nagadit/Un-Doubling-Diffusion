@@ -1,0 +1,18 @@
+
+# sequential-generation
+save_path: '/home/jovyan/ekaskov/homonyms/repo/seq_generations'
+num_images: 50
+# generations take longer, and can be parallelized by models
+modelname4generation: sd3medium  # from all.yaml
+
+defaults:
+  - models : all
+
+  # https://stackoverflow.com/questions/65104134/disable-file-output-of-hydra
+  - override hydra/hydra_logging: disabled
+  - override hydra/job_logging: disabled
+
+hydra:
+  output_subdir: null
+  run:
+    dir: .
